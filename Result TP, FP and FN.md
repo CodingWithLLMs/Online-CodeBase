@@ -1,25 +1,27 @@
 # Performance Comparison Results
-## Static Analysis Tools vs. Large Language Models (LLMs)
 
-This report compares the accuracy of traditional static analysis tools (**Pylint**, **Flake8**) against various LLMs (**ChatGPT**, **Gemini**, **Claude**, **DeepSeek**, **Qwen**) across three evaluation phases.
+# Model Results Summary
+## Comparative Performance Analysis
 
-| Model / Tool | Metric | p1 | p2 | p3 |
-| :--- | :--- | :--- | :--- | :--- |
-| **Pylint** | TP / FP / FN <br> **Prec / Rec / F1** | 288 / 0 / 1082 <br> **1.00 / 0.21 / 0.35** | 903 / 0 / 467 <br> **1.00 / 0.66 / 0.79** | - |
-| **Flake8** | TP / FP / FN <br> **Prec / Rec / F1** | 96 / 1 / 1273 <br> **0.99 / 0.07 / 0.13** | 96 / 1 / 1273 <br> **0.99 / 0.07 / 0.13** | 84 / 17 / 1269 <br> **0.83 / 0.06 / 0.12** |
-| **ChatGPT 4-Turbo** | TP / FP / FN <br> **Prec / Rec / F1** | 871 / 9 / 490 <br> **0.99 / 0.64 / 0.78** | 778 / 0 / 592 <br> **1.00 / 0.57 / 0.72** | 332 / 7 / 1031 <br> **0.98 / 0.24 / 0.39** |
-| **Gemini 2.5-pro-preview-03-25c** | TP / FP / FN <br> **Prec / Rec / F1** | 934 / 9 / 427 <br> **0.99 / 0.69 / 0.81** | 620 / 12 / 738 <br> **0.98 / 0.46 / 0.62** | 871 / 0 / 499 <br> **1.00 / 0.64 / 0.78** |
-| **Claude 3.7-Sonnet** | TP / FP / FN <br> **Prec / Rec / F1** | 413 / 145 / 812 <br> **0.74 / 0.34 / 0.46** | 80 / 43 / 1247 <br> **0.65 / 0.06 / 0.11** | 447 / 165 / 758 <br> **0.73 / 0.37 / 0.49** |
-| **DeepSeek-V3** | TP / FP / FN <br> **Prec / Rec / F1** | 301 / 61 / 1008 <br> **0.83 / 0.23 / 0.36** | 282 / 0 / 1088 <br> **1.00 / 0.21 / 0.34** | 10 / 115 / 1245 <br> **0.08 / 0.01 / 0.01** |
-| **Qwen 2.5-Max** | TP / FP / FN <br> **Prec / Rec / F1** | 534 / 0 / 836 <br> **1.00 / 0.39 / 0.56** | 239 / 0 / 1131 <br> **1.00 / 0.17 / 0.30** | 69 / 0 / 1301 <br> **1.00 / 0.05 / 0.10** |
-| **Kimi** | TP / FP / FN <br> **Prec / Rec / F1** | - | - | - |
-
----
-
-### Key Definitions
-* **TP (True Positives):** Correctly identified violations.
-* **FP (False Positives):** Incorrectly identified non-violations.
-* **FN (False Negatives):** Missed actual violations.
-* **Precision:** Accuracy of the positive predictions ($TP / (TP + FP)$).
-* **Recall:** Ability to find all actual violations ($TP / (TP + FN)$).
-* **F1-Score:** The harmonic mean of Precision and Recall.
+| Metric | ChatGPT 4-Turbo | Gemini 2.5-pro | Claude 3.7-Sonnet | DeepSeek-V3 | Qwen 2.5-Max | Kimi |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **p1 TP** | 96 | 871 | 934 | 413 | 301 | 534 |
+| **p1 FP** | 1 | 9 | 9 | 145 | 61 | 0 |
+| **p1 FN** | 1273 | 490 | 427 | 812 | 1008 | 836 |
+| **p1 Prec** | 0.99 | 0.99 | 0.99 | 0.74 | 0.83 | 1.00 |
+| **p1 Rec** | 0.07 | 0.64 | 0.69 | 0.34 | 0.23 | 0.39 |
+| **p1 F1** | 0.13 | 0.78 | 0.81 | 0.46 | 0.36 | 0.56 |
+| --- | --- | --- | --- | --- | --- | --- |
+| **p2 TP** | 96 | 778 | 620 | 80 | 282 | 239 |
+| **p2 FP** | 1 | 0 | 12 | 43 | 0 | 0 |
+| **p2 FN** | 1273 | 592 | 738 | 1247 | 1088 | 1131 |
+| **p2 Prec** | 0.99 | 1.00 | 0.98 | 0.65 | 1.00 | 1.00 |
+| **p2 Rec** | 0.07 | 0.57 | 0.46 | 0.06 | 0.21 | 0.17 |
+| **p2 F1** | 0.13 | 0.72 | 0.62 | 0.11 | 0.34 | 0.30 |
+| --- | --- | --- | --- | --- | --- | --- |
+| **p3 TP** | 84 | 332 | 871 | 447 | 10 | 69 |
+| **p3 FP** | 17 | 7 | 0 | 165 | 115 | 0 |
+| **p3 FN** | 1269 | 1031 | 499 | 758 | 1245 | 1301 |
+| **p3 Prec** | 0.83 | 0.98 | 1.00 | 0.73 | 0.08 | 1.00 |
+| **p3 Rec** | 0.06 | 0.24 | 0.64 | 0.37 | 0.01 | 0.05 |
+| **p3 F1** | 0.12 | 0.39 | 0.78 | 0.49 | 0.01 | 0.10 |
