@@ -28,7 +28,7 @@
 
 
 
-# Results: Static Analysis Tools
+# Static Analysis Tools Results Summary
 
 | Metric | Pylint | Flake8 |
 | :--- | :--- | :--- |
