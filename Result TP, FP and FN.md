@@ -25,3 +25,16 @@
 | **p3 Prec** | 0.83 | 0.98 | 1.00 | 0.73 | 0.08 | 1.00 |
 | **p3 Rec** | 0.06 | 0.24 | 0.64 | 0.37 | 0.01 | 0.05 |
 | **p3 F1** | 0.12 | 0.39 | 0.78 | 0.49 | 0.01 | 0.10 |
+
+
+
+# Results: Static Analysis Tools
+
+| Metric | Pylint | Flake8 |
+| :--- | :--- | :--- |
+| **True Positives** | 288 | 903 |
+| **False Positives** | 0 | 0 |
+| **False Negatives** | 1082 | 467 |
+| **Precision** | 1.00 | 1.00 |
+| **Recall** | 0.21 | 0.66 |
+| **F1-Score** | 0.35 | 0.79 |
