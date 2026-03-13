@@ -13,9 +13,10 @@ The repository is intended for:
 - Provide examples of common coding interview problems.
 
 ## Access
-Code and data are available from the authors upon request.
+Code and data are available from the authors.
 
 ## License
 For educational and research use only.
+
 
 
