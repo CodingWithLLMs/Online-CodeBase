@@ -27,7 +27,7 @@ Use the Chain of Thought approach to explain your reasoning step-by-step before 
 
 
 
-## Role Based Prompt (P3)
+Role Based Prompt (P3)
 
 As a software engineer, you are tasked with analyzing the following Python code for any PEP 8 violations or potential issues. Your goal is to create a detailed table that includes the following columns:
 Severity (e.g., warning, error, etc.),
