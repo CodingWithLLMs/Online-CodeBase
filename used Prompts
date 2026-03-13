@@ -1,4 +1,4 @@
-## Stuctural Prompt (P1)
+Stuctural Prompt (P1)
 
 Analyze the following Python code for any PEP 8 violations or potential issues and create a table that includes the following columns: Severity (e.g., warning, error, etc.), Message (i.e., a descriptive message explaining the identified issue), Source (i.e., the source of the issue), and Start Line Number (i.e., the line number where the issue starts). 
 Here is the Python code to analyze:
@@ -6,7 +6,7 @@ Here is the Python code to analyze:
 
 
 
-## COT Prompt (P2)
+COT Prompt (P2)
 
 Analyze the provided Python code for PEP 8 violations, potential issues, or areas of improvement. Use a Chain of Thought (CoT) approach to systematically evaluate the code by following these steps:
 1.	Code Parsing: Begin by reading and parsing the code to understand its structure, logic, and purpose.
