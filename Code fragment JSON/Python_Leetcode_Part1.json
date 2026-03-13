@@ -1,0 +1,179 @@
+{
+  "Python_Leetcode_with_code": [
+    {
+      "title": "Valid Anagram",
+      "difficulty": "Easy",
+      "description": "Determine if two strings are anagrams of each other.",
+      "code": "def isAnagram(s,t):\n    return sorted(s)==sorted(t)",
+      "valuation": "Missing spaces around operators and after commas. No docstring. Single-letter variable names. No type hints."
+    },
+    {
+      "title": "Missing Number",
+      "difficulty": "Easy",
+      "description": "Find the missing number in an array of distinct numbers.",
+      "code": "def missingNumber(nums):\n    n=len(nums)\n    return n*(n+1)//2-sum(nums)",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Magic number in formula."
+    },
+    {
+      "title": "Move Zeroes",
+      "difficulty": "Easy",
+      "description": "Move all zeroes to the end of an array while maintaining the order of non-zero elements.",
+      "code": "def moveZeroes(nums):\n    i=0\n    for j in range(len(nums)):\n        if nums[j]!=0:\n            nums[i],nums[j]=nums[j],nums[i]\n            i+=1",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Word Pattern",
+      "difficulty": "Easy",
+      "description": "Check if a string follows a given pattern.",
+      "code": "def wordPattern(pattern,s):\n    words=s.split()\n    if len(pattern)!=len(words):\n        return False\n    char_to_word={}\n    word_to_char={}\n    for c,w in zip(pattern,words):\n        if c in char_to_word:\n            if char_to_word[c]!=w:\n                return False\n        else:\n            if w in word_to_char:\n                return False\n            char_to_word[c]=w\n            word_to_char[w]=c\n    return True",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Nim Game",
+      "difficulty": "Easy",
+      "description": "Determine if you can win the Nim game given the number of stones.",
+      "code": "def canWinNim(n):\n    return n%4!=0",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable name. No type hints. Magic number in condition."
+    },
+    {
+      "title": "Add Digits",
+      "difficulty": "Easy",
+      "description": "Repeatedly add the digits of a number until it becomes a single digit.",
+      "code": "def addDigits(num):\n    while num>=10:\n        num=sum(map(int,str(num)))\n    return num",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable name. No type hints. Redundant parentheses."
+    },
+    {
+      "title": "Binary Search",
+      "difficulty": "Easy",
+      "description": "Implement binary search on a sorted array.",
+      "code": "def search(nums,target):\n    left,right=0,len(nums)-1\n    while left<=right:\n        mid=(left+right)//2\n        if nums[mid]==target:\n            return mid\n        elif nums[mid]<target:\n            left=mid+1\n        else:\n            right=mid-1\n    return -1",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "First Bad Version",
+      "difficulty": "Easy",
+      "description": "Find the first bad version in a series of versions using minimal API calls.",
+      "code": "def firstBadVersion(n):\n    left,right=1,n\n    while left<right:\n        mid=(left+right)//2\n        if isBadVersion(mid):\n            right=mid\n        else:\n            left=mid+1\n    return left",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Ransom Note",
+      "difficulty": "Easy",
+      "description": "Determine if a ransom note can be constructed from a magazine.",
+      "code": "def canConstruct(ransomNote,magazine):\n    from collections import Counter\n    return not Counter(ransomNote)-Counter(magazine)",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Imports not at the top."
+    },
+    {
+      "title": "Fizz Buzz",
+      "difficulty": "Easy",
+      "description": "Print numbers from 1 to `n`, replacing multiples of 3, 5, or both with 'Fizz', 'Buzz', or 'FizzBuzz'.",
+      "code": "def fizzBuzz(n):\n    result=[]\n    for i in range(1,n+1):\n        if i%15==0:\n            result.append('FizzBuzz')\n        elif i%3==0:\n            result.append('Fizz')\n        elif i%5==0:\n            result.append('Buzz')\n        else:\n            result.append(str(i))\n    return result",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Reverse String",
+      "difficulty": "Easy",
+      "description": "Reverse a string in-place.",
+      "code": "def reverseString(s):\n    s[:]=s[::-1]",
+      "valuation": "No spaces around slice operator. No docstring. Single-letter variable name. No type hints."
+    },
+    {
+      "title": "Power of Two",
+      "difficulty": "Easy",
+      "description": "Check if a number is a power of two.",
+      "code": "def isPowerOfTwo(n):\n    return n>0 and (n&(n-1))==0",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable name. No type hints. Magic number in condition."
+    },
+    {
+      "title": "Valid Palindrome",
+      "difficulty": "Easy",
+      "description": "Check if a string is a valid palindrome after removing non-alphanumeric characters.",
+      "code": "def isPalindrome(s):\n    s=''.join(c.lower() for c in s if c.isalnum())\n    return s==s[::-1]",
+      "valuation": "No spaces around slice operator. No docstring. Single-letter variable name. No type hints."
+    },
+    {
+      "title": "Contains Duplicate",
+      "difficulty": "Easy",
+      "description": "Check if an array contains duplicate elements.",
+      "code": "def containsDuplicate(nums):\n    return len(nums)!=len(set(nums))",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints."
+    },
+    {
+      "title": "Intersection of Two Arrays",
+      "difficulty": "Easy",
+      "description": "Find the intersection of two arrays.",
+      "code": "def intersection(nums1,nums2):\n    return list(set(nums1)&set(nums2))",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints."
+    },
+    {
+      "title": "Happy Number",
+      "difficulty": "Easy",
+      "description": "Determine if a number is 'happy.'",
+      "code": "def isHappy(n):\n    def get_next(num):\n        return sum(int(digit)**2 for digit in str(num))\n    seen=set()\n    while n!=1 and n not in seen:\n        seen.add(n)\n        n=get_next(n)\n    return n==1",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Reverse Linked List",
+      "difficulty": "Easy",
+      "description": "Reverse a singly linked list.",
+      "code": "class ListNode:\n    def __init__(self,val=0,next=None):\n        self.val=val\n        self.next=next\n\ndef reverseList(head):\n    prev=None\n    curr=head\n    while curr:\n        next_node=curr.next\n        curr.next=prev\n        prev=curr\n        curr=next_node\n    return prev",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Implement Queue using Stacks",
+      "difficulty": "Easy",
+      "description": "Implement a queue using two stacks.",
+      "code": "class MyQueue:\n    def __init__(self):\n        self.stack1=[]\n        self.stack2=[]\n    def push(self,x):\n        self.stack1.append(x)\n    def pop(self):\n        if not self.stack2:\n            while self.stack1:\n                self.stack2.append(self.stack1.pop())\n        return self.stack2.pop()\n    def peek(self):\n        if not self.stack2:\n            while self.stack1:\n                self.stack2.append(self.stack1.pop())\n        return self.stack2[-1]\n    def empty(self):\n        return not self.stack1 and not self.stack2",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "Power of Three",
+      "difficulty": "Easy",
+      "description": "Check if a number is a power of three.",
+      "code": "def isPowerOfThree(n):\n    if n<1:\n        return False\n    while n%3==0:\n        n//=3\n    return n==1",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable name. No type hints. Magic number in condition."
+    },
+    {
+      "title": "Count Primes",
+      "difficulty": "Easy",
+      "description": "Count the number of prime numbers less than a non-negative number.",
+      "code": "def countPrimes(n):\n    if n<2:\n        return 0\n    sieve=[True]*n\n    sieve[0]=sieve[1]=False\n    for i in range(2,int(n**0.5)+1):\n        if sieve[i]:\n            sieve[i*i:n:i]=[False]*len(sieve[i*i:n:i])\n    return sum(sieve)",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Magic number in condition."
+    },
+    {
+      "title": "Valid Perfect Square",
+      "difficulty": "Easy",
+      "description": "Check if a number is a perfect square.",
+      "code": "def isPerfectSquare(num):\n    if num<2:\n        return True\n    left,right=2,num//2\n    while left<=right:\n        mid=(left+right)//2\n        if mid*mid==num:\n            return True\n        elif mid*mid<num:\n            left=mid+1\n        else:\n            right=mid-1\n    return False",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Deep nesting in loop."
+    },
+    {
+      "title": "First Unique Character in a String",
+      "difficulty": "Easy",
+      "description": "Find the first non-repeating character in a string.",
+      "code": "def firstUniqChar(s):\n    from collections import Counter\n    count=Counter(s)\n    for i,char in enumerate(s):\n        if count[char]==1:\n            return i\n    return -1",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Imports not at the top."
+    },
+    {
+      "title": "Find the Difference",
+      "difficulty": "Easy",
+      "description": "Find the letter added to a string compared to another.",
+      "code": "def findTheDifference(s,t):\n    from collections import Counter\n    return list((Counter(t)-Counter(s)).keys())[0]",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Imports not at the top."
+    },
+    {
+      "title": "Longest Palindrome",
+      "difficulty": "Easy",
+      "description": "Find the length of the longest palindrome that can be built from a string.",
+      "code": "def longestPalindrome(s):\n    from collections import Counter\n    count=Counter(s)\n    length=0\n    odd_found=False\n    for char,freq in count.items():\n        if freq%2==0:\n            length+=freq\n        else:\n            length+=freq-1\n            odd_found=True\n    return length+1 if odd_found else length",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints. Imports not at the top."
+    },
+    {
+      "title": "Single Number",
+      "difficulty": "Easy",
+      "description": "Find the single number in an array where every other number appears twice.",
+      "code": "def singleNumber(nums):\n    result=0\n    for num in nums:\n        result^=num\n    return result",
+      "valuation": "Missing spaces around operators. No docstring. Single-letter variable names. No type hints."
+    }
+  ]
+}
